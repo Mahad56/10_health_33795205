@@ -5,7 +5,6 @@ const validate = require('../middleware/validate');
 
 module.exports = (db) => {
 
-  // sql
   const sql = `
     SELECT 
       id,
@@ -38,7 +37,7 @@ module.exports = (db) => {
       db.query(
           "INSERT INTO activities (user_id, activity, minutes, calories, date) VALUES (?, ?, ?, ?, ?)",
           [req.session.user.id, activity, minutes, calories, date],
-          () => res.redirect('activities')
+          () => res.redirect('/activities')
       );
   });
 
@@ -64,11 +63,12 @@ module.exports = (db) => {
           WHERE id=? AND user_id=?
       `;
 
-      db.query(updateSql,
+      db.query(
+          updateSql,
           [activity, minutes, calories, date, req.params.id, req.session.user.id],
           (err) => {
               if (err) return res.send("Update failed.");
-              res.redirect("activities");
+              res.redirect('/activities');
           }
       );
   });
@@ -80,7 +80,7 @@ module.exports = (db) => {
           [req.params.id, req.session.user.id],
           (err) => {
               if (err) return res.send("Delete failed.");
-              res.redirect("activities");
+              res.redirect('/activities');
           }
       );
   });

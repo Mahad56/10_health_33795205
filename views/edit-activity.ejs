@@ -1,21 +1,32 @@
 <%- include('partials/header') %>
 
+<div class="container">
+
 <h2>Edit Activity</h2>
 
-<form action="edit/<%= activity.id %>" method="POST">
-  <label>Activity:</label>
+<form action="/edit/<%= activity.id %>" method="POST">
+
+  <label>Activity</label>
   <input type="text" name="activity" value="<%= activity.activity %>" required>
 
-  <label>Minutes:</label>
+  <label>Minutes</label>
   <input type="number" name="minutes" value="<%= activity.minutes %>" required>
 
-  <label>Calories:</label>
+  <label>Calories</label>
   <input type="number" name="calories" value="<%= activity.calories %>" required>
 
-  <label>Date:</label>
-  <input type="date" name="date" value="<%= activity.date.toISOString().slice(0,10) %>" required>
+  <label>Date</label>
+  <input 
+    type="date" 
+    name="date" 
+    value="<%= activity.date.toISOString().slice(0,10) %>" 
+    required
+  >
 
-  <button type="submit">Save Changes</button>
+  <button type="submit" class="btn-edit">Save Changes</button>
+
 </form>
+
+</div>
 
 <%- include('partials/footer') %>
