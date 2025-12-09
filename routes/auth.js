@@ -17,7 +17,10 @@ module.exports = (db) => {
 
       const sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)";
       db.query(sql, [username, hash], (err) => {
-        if (err) return res.send("User already exists or DB error.");
+        if (err) {
+          console.log("DB ERROR:", err);
+          return res.send("DB Error: " + err.code);
+        }
         res.redirect('/login');
       });
     });
@@ -45,7 +48,6 @@ module.exports = (db) => {
                 return res.send("Invalid username or password.");
             }
 
-            // FIX: save session correctly
             req.session.user = user;
             req.session.save(() => {
                 res.redirect('/activities');

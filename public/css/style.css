@@ -102,6 +102,24 @@ table tr:hover {
     background: #f1f4fb;
 }
 
+/* edit and delete buttons*/
+.btn-edit {
+  background-color: #179332;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-delete {
+  background-color: #840915;
+  padding: 6px 12px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* FOOTER */
 footer {
     text-align: center;

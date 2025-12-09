@@ -18,16 +18,18 @@
       <td><%= r.minutes %></td>
       <td><%= r.calories %></td>
       <td><%= r.nice_date %></td>
+    <td>
+      <a href="/edit/<%= r.id %>" class="btn btn-edit">Edit</a>
+    </td>
 
-      <td>
-        <a href="/edit/<%= r.id %>">Edit</a>
-      </td>
+    <td>
+      <form action="/delete/<%= r.id %>" method="POST" style="display:inline;">
+        <button class="btn btn-delete" onclick="return confirm('Delete this activity?')">
+          Delete
+        </button>
+      </form>
+    </td>
 
-      <td>
-        <form action="/delete/<%= r.id %>" method="POST" onsubmit="return confirm('Delete this activity?');">
-          <button type="submit">Delete</button>
-        </form>
-      </td>
     </tr>
   <% }) %>
 </table>

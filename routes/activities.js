@@ -12,7 +12,7 @@ module.exports = (db) => {
       activity,
       minutes,
       calories,
-      DATE(date) AS nice_date
+      DATE_FORMAT(date, '%d %b %Y') AS nice_date
     FROM activities
     WHERE user_id = ?
     ORDER BY date DESC
