@@ -38,7 +38,7 @@ module.exports = (db) => {
       db.query(
           "INSERT INTO activities (user_id, activity, minutes, calories, date) VALUES (?, ?, ?, ?, ?)",
           [req.session.user.id, activity, minutes, calories, date],
-          () => res.redirect('/activities')
+          () => res.redirect('activities')
       );
   });
 
