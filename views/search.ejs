@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<h1>Search Activities</h1>
+
+<form method="POST">
+  <input name="term" placeholder="Search activity name">
+  <button>Search</button>
+</form>
+
+<table border="1" cellpadding="8" style="margin-top:20px">
+  <% rows.forEach(r => { %>
+  <tr>
+    <td><%= r.activity %></td>
+    <td><%= r.minutes %></td>
+    <td><%= r.calories %></td>
+    <td><%= r.date %></td>
+  </tr>
+  <% }) %>
+</table>
+
+<%- include('partials/footer') %>

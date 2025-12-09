@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<h1>Add Activity</h1>
+
+<form method="POST" action="/add-activity">
+  <label>Activity</label><br>
+  <input name="activity" required><br><br>
+
+  <label>Minutes</label><br>
+  <input type="number" name="minutes" required><br><br>
+
+  <label>Calories burnt</label><br>
+  <input type="number" name="calories" required><br><br>
+
+  <label>Date</label><br>
+  <input type="date" name="date" required><br><br>
+
+  <button type="submit">Save Activity</button>
+</form>
+
+<%- include('partials/footer') %>

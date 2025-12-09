@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<h2>All Activities</h2>
+
+<table>
+  <tr>
+    <th>Activity</th>
+    <th>Minutes</th>
+    <th>Calories</th>
+    <th>Date</th>
+  </tr>
+
+  <% rows.forEach(r => { %>
+    <tr>
+      <td><%= r.activity %></td>
+      <td><%= r.minutes %></td>
+      <td><%= r.calories %></td>
+      <td><%= r.nice_date %></td>
+    </tr>
+  <% }) %>
+</table>
+
+<%- include('partials/footer') %>
