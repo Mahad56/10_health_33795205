@@ -68,7 +68,7 @@ module.exports = (db) => {
           [activity, minutes, calories, date, req.params.id, req.session.user.id],
           (err) => {
               if (err) return res.send("Update failed.");
-              res.redirect("/activities");
+              res.redirect("activities");
           }
       );
   });
@@ -80,7 +80,7 @@ module.exports = (db) => {
           [req.params.id, req.session.user.id],
           (err) => {
               if (err) return res.send("Delete failed.");
-              res.redirect("/activities");
+              res.redirect("activities");
           }
       );
   });

@@ -21,7 +21,7 @@ module.exports = (db) => {
           console.log("DB ERROR:", err);
           return res.send("DB Error: " + err.code);
         }
-        res.redirect('/login');
+        res.redirect('login');
       });
     });
   });
@@ -50,7 +50,7 @@ module.exports = (db) => {
 
             req.session.user = user;
             req.session.save(() => {
-                res.redirect('/activities');
+                res.redirect('activities');
             });
         });
     });
@@ -59,7 +59,7 @@ module.exports = (db) => {
   // LOGOUT
   router.get('/logout', (req, res) => {
     req.session.destroy(() => {
-      res.redirect('/login');
+      res.redirect('login');
     });
   });
 
