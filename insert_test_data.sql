@@ -1,7 +1,7 @@
 USE health;
 
-INSERT INTO users (username, hashedPassword, first, last, email)
-VALUES ('gold', 'TEMPORARY', 'Gold', 'User', 'gold@example.com');
+INSERT INTO users (username, password_hash)
+VALUES ('gold', '$2a$10$uZQY0FUj8HnV/KxZtL8IMEQqsF.rXRIHdv8ImZ/Sc7Vc8GvqbU92a');
 
 INSERT INTO activities (user_id, activity, minutes, calories, date)
 VALUES
