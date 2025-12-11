@@ -46,10 +46,17 @@ app.use('/', activityRoutes);
 const searchRoutes = require('./routes/search')(db);
 app.use('/', searchRoutes);
 
+app.get('/error-test', (req, res, next) => {
+    next(new Error("Intentional test error"));
+});
 
 // Basic pages
 app.get('/', (req, res) => res.render('home'));
 app.get('/about', (req, res) => res.render('about'));
+
+
+const errorHandler = require('./middleware/error');
+app.use(errorHandler);
 
 // Start server
 app.listen(8000, () => console.log("Running on port 8000"));
