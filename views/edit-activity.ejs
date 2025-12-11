@@ -1,32 +1,48 @@
 <%- include('partials/header') %>
 
 <div class="container">
+  <h2>Edit Activity</h2>
 
-<h2>Edit Activity</h2>
+  <form action="/edit/<%= activity.id %>" method="POST" class="form-box">
 
-<form action="./edit/<%= activity.id %>" method="POST">
+    <label for="activity">Activity</label>
+    <input 
+      type="text" 
+      id="activity" 
+      name="activity" 
+      value="<%= activity.activity %>" 
+      required
+    >
 
-  <label>Activity</label>
-  <input type="text" name="activity" value="<%= activity.activity %>" required>
+    <label for="minutes">Minutes</label>
+    <input 
+      type="number" 
+      id="minutes" 
+      name="minutes" 
+      value="<%= activity.minutes %>" 
+      required
+    >
 
-  <label>Minutes</label>
-  <input type="number" name="minutes" value="<%= activity.minutes %>" required>
+    <label for="calories">Calories</label>
+    <input 
+      type="number" 
+      id="calories" 
+      name="calories" 
+      value="<%= activity.calories %>" 
+      required
+    >
 
-  <label>Calories</label>
-  <input type="number" name="calories" value="<%= activity.calories %>" required>
+    <label for="date">Date</label>
+    <input 
+      type="date" 
+      id="date" 
+      name="date" 
+      value="<%= activity.date.toISOString().slice(0,10) %>" 
+      required
+    >
 
-  <label>Date</label>
-  <input 
-    type="date" 
-    name="date" 
-    value="<%= activity.date.toISOString().slice(0,10) %>" 
-    required
-  >
-
-  <button type="submit" class="btn-edit">Save Changes</button>
-
-</form>
-
+    <button class="btn" type="submit">Save Changes</button>
+  </form>
 </div>
 
 <%- include('partials/footer') %>

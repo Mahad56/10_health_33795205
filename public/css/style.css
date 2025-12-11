@@ -120,6 +120,39 @@ table tr:hover {
   cursor: pointer;
 }
 
+
+/*edit page*/
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    width: 100%;
+}
+
+.btn {
+    background: #0b6932;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn:hover {
+    background: #095428;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
